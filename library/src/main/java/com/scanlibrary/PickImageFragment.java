@@ -12,7 +12,7 @@ import android.content.pm.PackageManager;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
+//import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -331,7 +331,7 @@ public class PickImageFragment extends Fragment implements  OnDialogButtonClickL
         scanner.onBitmapSelect(uri);
     }
 
-    /*private Bitmap getBitmap(Uri selectedimg) throws IOException {
+    private Bitmap getBitmap(Uri selectedimg) throws IOException {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = 3;
         AssetFileDescriptor fileDescriptor = null;
@@ -341,8 +341,8 @@ public class PickImageFragment extends Fragment implements  OnDialogButtonClickL
                 = BitmapFactory.decodeFileDescriptor(
                 fileDescriptor.getFileDescriptor(), null, options);
         return original;
-    }*/
-    private Bitmap getBitmap(Uri selectedimg) throws IOException {
+    }
+    /*private Bitmap getBitmap(Uri selectedimg) throws IOException {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = 3;
         AssetFileDescriptor fileDescriptor = null;
@@ -353,5 +353,5 @@ public class PickImageFragment extends Fragment implements  OnDialogButtonClickL
         Bitmap scaledBitmap = Bitmap.createScaledBitmap(original,original.getWidth(),original.getHeight(),true);
         Bitmap rotatedBitmap = Bitmap.createBitmap(scaledBitmap , 0, 0, scaledBitmap .getWidth(), scaledBitmap .getHeight(), matrix, true);
         return rotatedBitmap;
-    }
+    }*/
 }
