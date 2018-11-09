@@ -4,20 +4,41 @@
     android:background="@android:color/black"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/doneButton"
+    <LinearLayout
+        android:id="@+id/rLayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/bottom_background_color"
+        android:background="#ffc4c2bc"
         android:orientation="horizontal"
-        android:padding="@dimen/bottom_bar_padding"
-        android:text="OK" />
+        android:padding="2dp">
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/bottom_background_color"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:text="Volver" />
+
+        <Button
+            android:id="@+id/doneButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/bottom_background_color"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:text="OK" />
+
+    </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/doneButton"
+        android:layout_above="@id/rLayout"
         android:layout_gravity="center"
         android:layout_margin="@dimen/scanPadding">
 
