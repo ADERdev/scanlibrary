@@ -72,6 +72,7 @@ public class PickImageFragment extends Fragment implements  OnDialogButtonClickL
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.pick_image_fragment, null);
+        getActivity().getActionBar().hide();
         init();
         return view;
     }
