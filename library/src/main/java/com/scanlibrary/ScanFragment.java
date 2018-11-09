@@ -55,6 +55,7 @@ public class ScanFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.scan_fragment_layout, null);
+        getActivity().getActionBar().hide();
         init();
         return view;
     }
