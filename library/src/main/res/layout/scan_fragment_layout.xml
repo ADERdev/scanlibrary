@@ -4,30 +4,41 @@
     android:background="@android:color/black"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/backButton"
+    <LinearLayout
+        android:id="@+id/fLayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/bottom_background_color"
+        android:background="#ffc4c2bc"
         android:orientation="horizontal"
-        android:padding="@dimen/bottom_bar_padding"
-        android:text="Volver"></Button>
-    
-    <Button
-        android:id="@+id/scanButton"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/bottom_background_color"
-        android:orientation="horizontal"
-        android:padding="@dimen/bottom_bar_padding"
-        android:text="Siguiente"></Button>
+        android:padding="2dp">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="1"
+            android:background="@color/bottom_background_color"
+            android:orientation="horizontal"
+            android:text="Volver"></Button>
+
+        <Button
+            android:id="@+id/scanButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="1"
+            android:background="@color/bottom_background_color"
+            android:orientation="horizontal"
+            android:text="Siguiente"></Button>
+
+    </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/scanButton"
+        android:layout_above="@id/fLayout"
         android:layout_gravity="center"
         android:layout_margin="@dimen/scanPadding">
 
