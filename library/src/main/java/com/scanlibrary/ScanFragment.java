@@ -170,6 +170,7 @@ public class ScanFragment extends Fragment {
     private class BackButtonClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
+            Log.d("Pa tras", "pa trassssssssssssss");
             Intent intent = new Intent(context, ScanActivity.class);
             intent.putExtra(ScanConstants.OPEN_INTENT_PREFERENCE, ScanConstants.OPEN_CAMERA);
             startActivity(intent);
