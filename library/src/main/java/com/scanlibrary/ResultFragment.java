@@ -123,7 +123,8 @@ public class ResultFragment extends Fragment {
             //Intent intent = new Intent(context, ScanActivity.class);
             //intent.putExtra(ScanConstants.OPEN_INTENT_PREFERENCE, ScanConstants.OPEN_CAMERA);
             //startActivity(intent);
-            getActivity().finish();
+            //getActivity().finish();
+            getActivity().onBackPressed();
         }
     }
     
