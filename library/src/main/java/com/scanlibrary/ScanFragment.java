@@ -158,13 +158,43 @@ public class ScanFragment extends Fragment {
 
     private class ScanButtonClickListener implements View.OnClickListener {
         @Override
-        public void onClick(View v) {
+        /*public void onClick(View v) {
             Map<Integer, PointF> points = polygonView.getPoints();
             if (isScanPointsValid(points)) {
                 new ScanAsyncTask(points).execute();
             } else {
                 showErrorDialog();
             }
+        }*/
+        public void onClick(View v) {
+            showProgressDialog(getResources().getString(R.string.loading));
+            AsyncTask.execute(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Intent data = new Intent();
+                        //Bitmap bitmap = transformed;
+                        Bitmap bitmap = original;
+                        /*if (bitmap == null) {
+                            bitmap = original;
+                        }*/
+                        Uri uri = Utils.getUri(getActivity(), bitmap);
+                        data.putExtra(ScanConstants.SCANNED_RESULT, uri);
+                        getActivity().setResult(Activity.RESULT_OK, data);
+                        original.recycle();
+                        System.gc();
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                dismissDialog();
+                                getActivity().finish();
+                            }
+                        });
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
         }
     }
     
