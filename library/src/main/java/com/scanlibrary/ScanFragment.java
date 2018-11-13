@@ -173,11 +173,13 @@ public class ScanFragment extends Fragment {
                 public void run() {
                     try {
                         Intent data = new Intent();
+                        Map<Integer, PointF> points = polygonView.getPoints();
                         //Bitmap bitmap = transformed;
-                        Bitmap bitmap = original;
-                        /*if (bitmap == null) {
-                            bitmap = original;
-                        }*/
+                        //Bitmap bitmap = original;
+                        Bitmap bitmap =  getScannedBitmap(original, points);
+                    /*if (bitmap == null) {
+                        bitmap = original;
+                    }*/
                         Uri uri = Utils.getUri(getActivity(), bitmap);
                         data.putExtra(ScanConstants.SCANNED_RESULT, uri);
                         getActivity().setResult(Activity.RESULT_OK, data);
