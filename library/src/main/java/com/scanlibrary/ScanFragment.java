@@ -96,7 +96,8 @@ public class ScanFragment extends Fragment {
     }
 
     private Uri getUri() {
-        Uri uri = getArguments().getParcelable(ScanConstants.SELECTED_BITMAP);
+        //Uri uri = getArguments().getParcelable(ScanConstants.SELECTED_BITMAP);
+        Uri uri = getArguments().getParcelable(ScanConstants.SCANNED_RESULT);
         return uri;
     }
 
