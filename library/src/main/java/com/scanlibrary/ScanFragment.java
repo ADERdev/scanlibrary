@@ -3,6 +3,8 @@ package com.scanlibrary;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.graphics.PointF;
@@ -14,13 +16,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.content.Context;
-import android.content.Intent;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -42,6 +43,7 @@ public class ScanFragment extends Fragment {
     private ProgressDialogFragment progressDialogFragment;
     private IScanner scanner;
     private Bitmap original;
+    Context context;
 
     @Override
     public void onAttach(Activity activity) {
@@ -96,8 +98,8 @@ public class ScanFragment extends Fragment {
     }
 
     private Uri getUri() {
-        //Uri uri = getArguments().getParcelable(ScanConstants.SELECTED_BITMAP);
-        Uri uri = getArguments().getParcelable(ScanConstants.SCANNED_RESULT);
+        Uri uri = getArguments().getParcelable(ScanConstants.SELECTED_BITMAP);
+        //Uri uri = getArguments().getParcelable(ScanConstants.SCANNED_RESULT);
         return uri;
     }
 
@@ -159,15 +161,15 @@ public class ScanFragment extends Fragment {
 
     private class ScanButtonClickListener implements View.OnClickListener {
         @Override
-        /*public void onClick(View v) {
+        public void onClick(View v) {
             Map<Integer, PointF> points = polygonView.getPoints();
             if (isScanPointsValid(points)) {
                 new ScanAsyncTask(points).execute();
             } else {
                 showErrorDialog();
             }
-        }*/
-        public void onClick(View v) {
+        }
+        /*public void onClick(View v) {
             showProgressDialog(getResources().getString(R.string.loading));
             AsyncTask.execute(new Runnable() {
                 @Override
@@ -178,10 +180,11 @@ public class ScanFragment extends Fragment {
                         //Bitmap bitmap = transformed;
                         //Bitmap bitmap = original;
                         Bitmap bitmap =  getScannedBitmap(original, points);
-                    /*if (bitmap == null) {
+                    *//*if (bitmap == null) {
                         bitmap = original;
-                    }*/
+                    }*//*
                         Uri uri = Utils.getUri(getActivity(), bitmap);
+                        scanner.onScanFinish(uri);
                         data.putExtra(ScanConstants.SCANNED_RESULT, uri);
                         getActivity().setResult(Activity.RESULT_OK, data);
                         original.recycle();
@@ -198,12 +201,16 @@ public class ScanFragment extends Fragment {
                     }
                 }
             });
-        }
+        }*/
     }
-    
+
     private class BackButtonClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
+            //Log.d("Pa tras", "pa trassssssssssss");
+            //Intent intent = new Intent(context, ScanActivity.class);
+            //intent.putExtra(ScanConstants.OPEN_INTENT_PREFERENCE, ScanConstants.OPEN_CAMERA);
+            //startActivity(intent);
             getActivity().finish();
         }
     }
