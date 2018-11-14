@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
+    android:background="#5000"
     android:orientation="vertical">
 
     <LinearLayout
@@ -9,7 +9,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#ffc4c2bc"
+        android:background="#55000000"
         android:orientation="horizontal"
         android:padding="2dp">
 
@@ -18,20 +18,20 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@color/bottom_background_color"
+            android:background="#55000000"
             android:orientation="horizontal"
             android:layout_weight="1"
-            android:text="Volver" />
+            android:text="Cancelar" />
 
         <Button
             android:id="@+id/doneButton"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@color/bottom_background_color"
+            android:background="#55000000"
             android:orientation="horizontal"
             android:layout_weight="1"
-            android:text="Enviar" />
+            android:text="OK" />
 
     </LinearLayout>
 
@@ -40,7 +40,8 @@
         android:layout_height="match_parent"
         android:layout_above="@id/rLayout"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/scanPadding">
+        android:layout_margin="@dimen/scanPadding"
+        android:background="#55000000">
 
         <ImageView
             android:id="@+id/scannedImage"
